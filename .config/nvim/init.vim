@@ -10,6 +10,8 @@ set softtabstop=4
 set tabstop=4
 set copyindent
 
+" ts
+
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!pipenv run python' shellescape(@%, 1)<CR>
 
 function! WinMove(key)
