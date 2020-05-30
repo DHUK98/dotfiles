@@ -1,0 +1,7 @@
+
+{
+	"suggest.noselect":false,
+	"python.linting.pylintPath":"pylint",
+	"python.jediEnabled": false,
+	"python.linting.pylintArgs" : []
+}
