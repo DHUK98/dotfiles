@@ -3,5 +3,8 @@
 	"suggest.noselect":false,
 	"python.linting.pylintPath":"pylint",
 	"python.jediEnabled": false,
-	"python.linting.pylintArgs" : []
+	"python.linting.pylintArgs" : [],
+	"python.formatting.provider":"black",
+	"python.formatting.blackPath":"/home/dennis/.local/bin/black",
+	"coc.preferences.formatOnSaveFiletypes":["python"]
 }

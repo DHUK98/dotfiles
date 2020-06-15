@@ -2,15 +2,20 @@ let mapleader = " "
 let maplocalleader = "-"
 set updatetime=100
 autocmd InsertEnter * norm zz
+
 set relativenumber
 set cursorline
+set cursorcolumn 
 set autoindent
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set copyindent
 
-" ts
+let g:python_host_prog = '/usr/bin/python3'
+
+vmap <Tab> >gv
+vmap <S-Tab> <gv
 
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!pipenv run python' shellescape(@%, 1)<CR>
 
@@ -31,6 +36,10 @@ nnoremap <silent> <C-h> :call WinMove('h')<CR>
 nnoremap <silent> <C-j> :call WinMove('j')<CR>
 nnoremap <silent> <C-k> :call WinMove('k')<CR>
 nnoremap <silent> <C-l> :call WinMove('l')<CR>
+" vimwiki
+set nocompatible
+filetype plugin on
+syntax on
 
 " easymotion
 map <Leader>f <Plug>(easymotion-bd-f)
@@ -46,6 +55,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+nmap <Leader>g <Plug>(coc-format)
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -74,7 +84,7 @@ highlight GitGutterDelete ctermfg=1
 highlight GitGutterChangeDelete ctermfg=4
 
 " airline
-let g:airline_theme = "codedark"
+let g:airline_theme = "gruvbox"
 let g:airline#extensions#hunks#enabled = 1 
 
 " tagbars
@@ -99,8 +109,12 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'lervag/vimtex'
+Plug 'morhetz/gruvbox'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
-colorscheme codedark
+colorscheme gruvbox
 set nu

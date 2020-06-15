@@ -122,11 +122,10 @@ alias vi="nvim"
 alias lf="ranger"
 
 shopt -s autocd
-# neofetch --ascii ~/.config/DH.txt --disable uptime icons theme packages resolution
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 alias ff="fzf | xargs -r nvim"
-
+# figlet dennis -f 3d.flf
 export EDITOR=nvim
 alias config='/usr/bin/git --git-dir=$HOME/docs/dotfiles/ --work-tree=$HOME'
